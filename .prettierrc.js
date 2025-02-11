@@ -1,7 +1,5 @@
 module.exports = {
   arrowParens: 'avoid',
-  bracketSameLine: true,
-  bracketSpacing: false,
   singleQuote: true,
   trailingComma: 'all',
   importOrder: [
@@ -13,7 +11,7 @@ module.exports = {
     '^@main$',
     '^@components/(.*)$',
     '^@assets/(.*)$',
-    '^@screens/(.*)$',
+    '^@views/(.*)$',
     '^@models/(.*)$',
     '^@services/(.*)$',
     '^@hooks/(.*)$',

@@ -39,7 +39,7 @@ bundle install
 Then, and every time you update your native dependencies, run:
 
 ```sh
-bundle exec pod install
+yarn pod:install
 ```
 
 ```sh
