@@ -14,6 +14,12 @@ interface TickerRowProps {
 export const TickerRow = observer(({ item }: TickerRowProps) => {
   Logger.message(`re-render symbol: ${item.symbol}`);
 
+  /**
+   * TODO: For each cell, implement a more fluid animation using react-native-reanimated,
+   *       so that all animations can run on the native thread and avoid blocking the JS thread.
+   *       This will provide smoother transitions and better performance overall.
+   */
+
   const prevPrice = useRef(item.price);
   const animatedValue = useRef(new Animated.Value(0)).current;
 

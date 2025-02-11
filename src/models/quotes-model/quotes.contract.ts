@@ -1,11 +1,13 @@
 import { makeAutoObservable } from 'mobx';
 
+import { formatNumber } from '@utils/format';
+
 export class TickerContract {
   public symbol: string = '';
-  public price: string = '';
-  public bestBidPrice: string = '';
-  public bestAskPrice: string = '';
-  public bestAskSize: string = '';
+  public price: number = 0;
+  public bestBidPrice: number = 0;
+  public bestAskPrice: number = 0;
+  public bestAskSize: number = 0;
 
   constructor() {
     makeAutoObservable(this);
@@ -13,10 +15,10 @@ export class TickerContract {
 
   public fromData(data: any) {
     this.symbol = data.symbol || '';
-    this.price = data.price || '';
-    this.bestBidPrice = data.bestBidPrice || '';
-    this.bestAskPrice = data.bestAskPrice || '';
-    this.bestAskSize = String(data.bestAskSize) || '';
+    this.price = formatNumber(data.price) || 0;
+    this.bestBidPrice = formatNumber(data.bestBidPrice) || 0;
+    this.bestAskPrice = formatNumber(data.bestAskPrice) || 0;
+    this.bestAskSize = formatNumber(data.bestAskSize) || 0;
   }
 
   public toJSON() {

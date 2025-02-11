@@ -78,6 +78,10 @@ export class QuotesModelStatic {
         this.isLoading = false;
       });
     } catch (error) {
+      Logger.error(error, {
+        method: 'QuotesModel:fetchData',
+        message: 'Error fetching data',
+      });
       runInAction(() => {
         this.error = error instanceof Error ? error.message : 'Unknown error';
         this.isLoading = false;
